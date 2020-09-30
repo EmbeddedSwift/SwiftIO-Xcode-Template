@@ -1,0 +1,60 @@
+#!/usr/bin/swift
+
+import Foundation
+
+struct Volume: Decodable {
+  let mount_point: String
+}
+
+struct MediaItem: Decodable {
+  let volumes: [Volume]
+}
+
+struct USBItem: Decodable {
+	let Media: [MediaItem]?
+  let serial_num: String?
+  let vendor_id: String?
+  let product_id: String?
+}
+
+struct USBBus: Decodable {
+  let _name: String
+  let _items: [USBItem]?
+}
+
+struct SPUSBDataType: Decodable {
+	let SPUSBDataType: [USBBus]
+}
+
+let task = Process()
+let pipe = Pipe()
+
+task.standardOutput = pipe
+task.arguments = ["-json", "SPUSBDataType"]
+task.launchPath = "/usr/sbin/system_profiler"
+task.launch()
+
+let data = pipe.fileHandleForReading.readDataToEndOfFile()
+    
+let bus = try! JSONDecoder().decode(SPUSBDataType.self, from: data)
+let mountPoint = bus.SPUSBDataType
+  .reduce([]) { (res: [USBItem], item: USBBus) in
+      var newResult: [USBItem] = res
+      newResult.append(contentsOf: item._items ?? [])
+      return newResult
+  }
+  .first(where: {
+    $0.serial_num == "0123456789ABCDEF" &&
+    $0.product_id == "0x0093"
+  })?
+ .Media?.first?
+ .volumes.first?
+ .mount_point
+ .components(separatedBy: .newlines)
+ .last
+
+guard let mountPoint = mountPoint, mountPoint.hasPrefix("/") else {
+    exit(1)
+}
+
+print(mountPoint)

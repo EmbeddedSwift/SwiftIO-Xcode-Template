@@ -87,6 +87,7 @@
 				0767CFDA2524C4FD00D7EF9F /* Frameworks */,
 				0767CFDB2524C4FD00D7EF9F /* CopyFiles */,
 				0767CFF52524C79100D7EF9F /* Build swiftio.bin */,
+				07DD8AA5252501600092924B /* Copy swiftio.bin to microSD */,
 			);
 			buildRules = (
 			);
@@ -152,7 +153,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Applications/MadMachine.app/Contents/Resources/app/dist/public/build/lib/tools_mac/scripts/dist/mm/mm build --sdk /Applications/MadMachine.app/Contents/Resources/app/dist/public/build/lib\n\nopen .build\n";
+			shellScript = "/Applications/MadMachine.app/Contents/Resources/app/dist/public/build/lib/tools_mac/scripts/dist/mm/mm build --sdk /Applications/MadMachine.app/Contents/Resources/app/dist/public/build/lib\n";
+		};
+		07DD8AA5252501600092924B /* Copy swiftio.bin to microSD */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy swiftio.bin to microSD";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp .build/swiftio.bin $(./Scripts/FindBoardStorage)\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
