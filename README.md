@@ -24,4 +24,4 @@ $ open MMXcodeSample.xcodeproj
 
 3. Hit `Cmd + B` and the Project will compile, when it's done compiling it will figure out the path to your microSD card and deploy it there. **WARNING**: an exsiting `swiftio.bin` on your microSD will be overwritten.
 
-4. 🎉 Restart the board in and enjoy.
+4. The board will reboot automatically and hopefully run your program! 🎉 
