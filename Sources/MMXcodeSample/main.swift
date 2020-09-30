@@ -1,3 +1,10 @@
+//
+//  main.swift
+//  MMXcodeSample
+//
+//  Created by Marcus Kida on 30.09.20.
+//
+
 import SwiftIO
 
 let green = DigitalOut(Id.GREEN)
@@ -13,3 +20,4 @@ while true {
     // Keep the light on for a minute.
     sleep(ms: 1000)
 }
+
