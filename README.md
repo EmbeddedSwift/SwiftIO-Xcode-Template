@@ -2,6 +2,8 @@
 
 ### A proof of concept to build a MadMachine.io Project using Xcode
 
+![Screenshot of Xcode](.meta/screenshot.png)
+
 #### Purpose
 
 You can now use Xcode to write your SwiftIO programs and automatically have them deployed to your SwiftIO board once they've been built successfully.
