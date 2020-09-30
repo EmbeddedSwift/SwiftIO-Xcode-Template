@@ -171,7 +171,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp .build/swiftio.bin $(./Scripts/FindBoardStorage)\n";
+			shellScript = "cp .build/swiftio.bin \"$(./Scripts/FindBoardStorage)\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
