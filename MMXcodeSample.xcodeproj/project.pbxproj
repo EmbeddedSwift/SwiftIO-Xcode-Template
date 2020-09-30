@@ -83,6 +83,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0767CFE42524C4FD00D7EF9F /* Build configuration list for PBXNativeTarget "MMXcodeSample" */;
 			buildPhases = (
+				07DD8AA8252516580092924B /* Check SwiftIO Board is in Download-Mode */,
 				0767CFD92524C4FD00D7EF9F /* Sources */,
 				0767CFDA2524C4FD00D7EF9F /* Frameworks */,
 				0767CFDB2524C4FD00D7EF9F /* CopyFiles */,
@@ -171,7 +172,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp .build/swiftio.bin \"$(./Scripts/FindBoardStorage)\"\n";
+			shellScript = "SWIFTIO_SD=\"$(./Scripts/FindBoardStorage)\"\ncp .build/swiftio.bin $SWIFTIO_SD\ndiskutil eject $SWIFTIO_SD\n";
+		};
+		07DD8AA8252516580092924B /* Check SwiftIO Board is in Download-Mode */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Check SwiftIO Board is in Download-Mode";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SWIFTIO_SD=\"$(./Scripts/FindBoardStorage)\"\nif [ -z $SWIFTIO_SD ]; then\n echo \"error: Please put SwiftIO Board into Download mode before building!\"\n exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
