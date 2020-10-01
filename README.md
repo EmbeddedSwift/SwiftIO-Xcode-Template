@@ -1,4 +1,4 @@
-# MMXcodeSample
+# SwiftIO Xcode Template
 
 ### A proof of concept to build a MadMachine.io Project using Xcode
 
@@ -18,8 +18,8 @@ You can now use Xcode to write your SwiftIO programs and automatically have them
 1. Clone this Repository and open it using Xcode:
 
 ```
-$ git clone https://github.com/kimar/MMXcodeSample.git && cd MMXcodeSample
-$ open MMXcodeSample.xcodeproj
+$ git clone https://github.com/kimar/SwiftIO-Xcode-Template.git && cd SwiftIO-Xcode-Template
+$ open SwiftIO-Xcode-Template.xcodeproj
 ```
 
 2. Put the SwiftIO board into download mode using the button.

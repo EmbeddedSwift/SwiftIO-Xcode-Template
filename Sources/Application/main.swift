@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  MMXcodeSample
+//  SwiftIO-Xcode-Template
 //
 //  Created by Marcus Kida on 30.09.20.
 //

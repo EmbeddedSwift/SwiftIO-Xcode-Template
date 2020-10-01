@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0767CFDC2524C4FD00D7EF9F"
-               BuildableName = "MMXcodeSample"
-               BlueprintName = "MMXcodeSample"
-               ReferencedContainer = "container:MMXcodeSample.xcodeproj">
+               BlueprintIdentifier = "07D187112525BE100086BEAE"
+               BuildableName = "Application.framework"
+               BlueprintName = "Application"
+               ReferencedContainer = "container:SwiftIO-Xcode-Template.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0767CFDC2524C4FD00D7EF9F"
-            BuildableName = "MMXcodeSample"
-            BlueprintName = "MMXcodeSample"
-            ReferencedContainer = "container:MMXcodeSample.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +47,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0767CFDC2524C4FD00D7EF9F"
-            BuildableName = "MMXcodeSample"
-            BlueprintName = "MMXcodeSample"
-            ReferencedContainer = "container:MMXcodeSample.xcodeproj">
+            BlueprintIdentifier = "07D187112525BE100086BEAE"
+            BuildableName = "Application.framework"
+            BlueprintName = "Application"
+            ReferencedContainer = "container:SwiftIO-Xcode-Template.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
