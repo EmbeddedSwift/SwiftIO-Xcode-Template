@@ -24,6 +24,7 @@ $ open SwiftIO-Xcode-Template.xcodeproj
 
 2. Put the SwiftIO board into download mode using the button.
 
-3. Hit `Cmd + B` and the Project will compile, when it's done compiling it will figure out the path to your microSD card and deploy it there. **WARNING**: an exsiting `swiftio.bin` on your microSD will be overwritten.
+3. Select the `Application`-Target to build the project and see if it compiles.
+4. If you'd like to deploy it to your SwiftIO board, just select the `Deploy to SwiftIO`-Target, hit `Cmd + B` and the Project will compile, when it's done compiling it will figure out the path to your microSD card and deploy it there. **WARNING**: an exsiting `swiftio.bin` on your microSD will be overwritten.
 
 4. The board will reboot automatically and hopefully run your program! 🎉 
