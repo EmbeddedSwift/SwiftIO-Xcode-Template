@@ -11,7 +11,7 @@ You can now use Xcode to write your SwiftIO programs and automatically have them
 #### Requirements
 
 1. Make sure you've got Xcode 12 installed.
-2. Make sure you've got the MadMachine IDE installed in `/Applications/MadMachine.app`.
+2. Please make sure you've also installed the [MadMachine CLI](//github.com/EmbeddedSwift/MadMachine).
 
 #### Usage
 

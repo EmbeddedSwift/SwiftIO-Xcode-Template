@@ -11,10 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 07B7E84E2525F9640019FE04 /* Build configuration list for PBXAggregateTarget "Deploy to SwiftIO" */;
 			buildPhases = (
-				07B7E8532525F9790019FE04 /* Check if MadMachine.app exists */,
-				07B7E8542525F9860019FE04 /* Check SwiftIO Board is in Download-Mode */,
-				07B7E8552525F9A20019FE04 /* Build SwiftIO.bin */,
-				07B7E8562525F9B20019FE04 /* Copy SwiftIO.bin to microSD */,
+				0736F293252B4EBE00D315F3 /* ShellScript */,
 			);
 			dependencies = (
 				07B7E8522525F96A0019FE04 /* PBXTargetDependency */,
@@ -178,7 +175,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07B7E8532525F9790019FE04 /* Check if MadMachine.app exists */ = {
+		0736F293252B4EBE00D315F3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -187,68 +184,13 @@
 			);
 			inputPaths = (
 			);
-			name = "Check if MadMachine.app exists";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -d \"/Applications/MadMachine.app\" ]; then\n echo \"error: Please make sure to install the MadMachine IDE in /Applications/MadMachine.app\"\n exit 1\nfi\n";
-		};
-		07B7E8542525F9860019FE04 /* Check SwiftIO Board is in Download-Mode */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Check SwiftIO Board is in Download-Mode";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "SWIFTIO_SD=\"$(./Scripts/FindBoardStorage)\"\nif [ -z \"$SWIFTIO_SD\" ]; then\n echo \"error: Please put SwiftIO Board into Download mode before building!\"\n exit 1\nfi\n";
-		};
-		07B7E8552525F9A20019FE04 /* Build SwiftIO.bin */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build SwiftIO.bin";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/Applications/MadMachine.app/Contents/Resources/app/dist/public/build/lib/tools_mac/scripts/dist/mm/mm build --sdk /Applications/MadMachine.app/Contents/Resources/app/dist/public/build/lib\n";
-		};
-		07B7E8562525F9B20019FE04 /* Copy SwiftIO.bin to microSD */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy SwiftIO.bin to microSD";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "SWIFTIO_SD=\"$(./Scripts/FindBoardStorage)\"\ncp .build/swiftio.bin \"$SWIFTIO_SD\"\ndiskutil eject \"$SWIFTIO_SD\"\n";
+			shellScript = "mm board --volume\n\nif [ $? -eq 0 ]; then\n    make run\nelse\n    echo \"error: Please put the SwiftIO board into Download mode before building.\"\n    exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
